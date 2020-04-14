@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container-main">
+      <div class="login-container" id="login-container">
+        <form class="w-100">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Name </label>
+            <input type="text" class="form-control" id="username" value="lucy" aria-describedby="emailHelp">
+            <!-- <small id="emailHelp" class="form-text text-muted fade">We'll never share your email with anyone else.</small> -->
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="passwd" value="123">
+          </div>
+          <div class="form-group">
+            <div id="login-alert" class="alert-sm alert-danger font p-2 d-none" style="font-size: 10px;" role="alert"></div>
+          </div>
+          <div class="form-group row justify-content-between pl-3 pr-2">
+            <button type="button" class="btn btn-primary" id="SignInButton">Sign in</button>
+            <button type="button" class="btn btn-link" id="SignUpButton">Sign up</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="data-grid data-grid-none" id="data-grid">
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <table class="table">
+          <thead class="thead-light">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">First</th>
+              <th scope="col">Last</th>
+              <th scope="col">Handle</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row" class="">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+
+    <footer>
+
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="libs/jquery/dist/jquery.min.js"></script>
+    <script src="libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/global.js"></script>
+    <script src="libs/login.js"></script>
+    <script src="libs/crud.js"></script>
+    <!-- <script>
+
+      $(document).ready(function(){
+
+
+        
+        $("#loginButton").click(function(){
+          var username = $('#username').val();
+          var passwd = $('#passwd').val();
+          
+          $.get(`http://localhost:8080/login?name=${username}&password=${passwd}`, function(data,status){
+            console.log("Data: ", data , "\nStatus: " , status);
+            if (data.success) {
+              //
+              
+              window.localStorage.setItem('token', data.token)
+              //
+              $.ajax({
+                type: "GET",
+                headers:{"Authorization": data.token},
+                dataType: "application/json; charset=utf-8",
+                url: "http://localhost:8080/fetchAnimals",
+                success: function(data, status) {
+                  if (status === 'success') {
+                    
+                    console.log(data);
+                  }
+                }
+              });
+              
+            } else {
+              // $('.alert').show(true);
+              // console.log($('.alert'));
+              // $('.alert').text(data.result)
+              alert(data.result);
+            }
+          });
+        });
+
+      });
+
+    </script> -->
+  </body>
+</html>
