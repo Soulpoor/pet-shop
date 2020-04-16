@@ -41,11 +41,12 @@ export class Server {
             return;
         }
 
-
-
         // auth
         const reqMethod = request.method;
-        if (reqMethod!=='OPTIONS') {
+        if (reqMethod ==='OPTIONS') {
+            response.end();
+        }
+        else {
             const token = request.headers.authorization;
             if (token) {
                 const isAllow = JwtService.getInstance().verifyToken(token);
@@ -57,25 +58,25 @@ export class Server {
                 await this.redirectUnAuth(response);
                 return;
             }
+            // CRUD
+            if (request.url.startsWith('/createAnimal')) {
+                AnimalService.getInstance().createAnmalHandler(options, response);
+                return;
+            }
+            else if (request.url.startsWith('/fetchAnimals')) {
+                AnimalService.getInstance().fetchAnimalHandler(options, response);
+                return;
+            }
+            else if (request.url.startsWith('/updateAnimal')) {
+                AnimalService.getInstance().updateAnimalHandler(options, response);
+                return;
+            }
+            else if (request.url.startsWith('/deleteAnimal')) {
+                AnimalService.getInstance().deleteAnimalHandler(options, response);
+                return;
+            }
         }
-
-        // CRUD
-        if (request.url.startsWith('/createAnimal')) {
-            AnimalService.getInstance().createAnmalHandler(options, response);
-            return;
-        }
-        else if (request.url.startsWith('/fetchAnimals')) {
-            AnimalService.getInstance().fetchAnimalHandler(options, response);
-            return;
-        }
-        else if (request.url.startsWith('/updateAnimal')) {
-            AnimalService.getInstance().updateAnimalHandler(options, response);
-            return;
-        }
-        else if (request.url.startsWith('/deleteAnimal')) {
-            AnimalService.getInstance().deleteAnimalHandler(options, response);
-            return;
-        }
+        
     }
 
     public listen(port) : void {

@@ -1,104 +1,151 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    </header>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
 
-    <div class="container-main">
-      <div class="login-container" id="login-container">
-        <form class="w-100">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Name </label>
-            <input type="text" class="form-control" id="username" value="lucy" aria-describedby="emailHelp">
-            <!-- <small id="emailHelp" class="form-text text-muted fade">We'll never share your email with anyone else.</small> -->
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="passwd" value="123">
-          </div>
-          <div class="form-group">
-            <div id="login-alert" class="alert-sm alert-danger font p-2 d-none" style="font-size: 10px;" role="alert"></div>
-          </div>
-          <div class="form-group row justify-content-between pl-3 pr-2">
-            <button type="button" class="btn btn-primary" id="SignInButton">Sign in</button>
-            <button type="button" class="btn btn-link" id="SignUpButton">Sign up</button>
-          </div>
+  <title>Hello, world!</title>
+</head>
+
+<body>
+  <header class="shadow-sm">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
+    </nav>
+  </header>
 
-      <div class="data-grid-container data-grid-container-none" id="data-grid-container">
-        <button type="button" class="btn btn-primary btn-sm" id="addPetButton">+ add</button>
-        <table class="table" id="data-grid">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-              <th scope="col">Operation</th>
-            </tr>
-          </thead>
-          <tbody>
-            
-          </tbody>
-        </table>
-      </div>
-      
+  <div class="d-flex justify-content-around align-items-center" style="height: calc(100% - 56px);">
+    <div id="login-container" class="bg-white p-5" style="width: 500px">
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name </label>
+          <input type="text" class="form-control" id="username" value="lucy" aria-describedby="emailHelp">
+          <!-- <small id="emailHelp" class="form-text text-muted fade">We'll never share your email with anyone else.</small> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="passwd" value="123">
+        </div>
+        <div class="form-group">
+          <div id="login-alert" class="alert-sm alert-danger font p-2 d-none" style="font-size: 10px;" role="alert">
+          </div>
+        </div>
+        <div class="form-group row justify-content-between pl-3 pr-2">
+          <button type="button" class="btn btn-primary" id="SignInButton">
+            <i class="fa fa-address-book-o" aria-hidden="true"></i> Sign in
+          </button>
+          <button type="button" class="btn btn-link" id="SignUpButton">Sign up</button>
+        </div>
+      </form>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="libs/jquery.min.js"></script>
-    <script src="libs/popper.min.js"></script>
-    <script src="libs/bootstrap.min.js"></script>
-    <script src="libs/global.js"></script>
-    <script src="libs/login.js"></script>
-    <script src="libs/crud.js"></script>
-  </body>
+    <div class="w-50 p-2 bg-white d-none" id="data-grid-container">
+      <div class="w-100 d-flex justify-content-between">
+        <button id="addPetButton" type="button" class="btn btn-primary mb-2" data-toggle="modal" data-target="#formModal" data-title="Add">
+          <i class="fa fa-plus"></i> Add
+        </button>
+        <button id="SignOutButton" type="button" class="btn btn-link text-success mb-2">Logout</button>
+      </div>
+      <table class="table" id="data-grid">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Species</th>
+            <th class="text-center" scope="col">Operation</th>
+          </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Modal -->
+    <div id="formModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="formModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="formModalLabel">title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="pet-name" class="col-form-label">Pet name:</label>
+                <input type="text" class="form-control" id="pet-name">
+              </div>
+              <div class="form-group">
+                <label for="pet-age" class="col-form-label">Pet age:</label>
+                <input type="number" class="form-control" id="pet-age">
+              </div>
+              <div class="form-group">
+                <label for="pet-species" class="col-form-label">Pet Species:</label>
+                <input type="text" class="form-control" id="pet-species">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="form-modal-submit">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="libs/jquery.min.js"></script>
+  <script src="libs/popper.min.js"></script>
+  <script src="libs/bootstrap.min.js"></script>
+  <script src="libs/global.js"></script>
+  <script src="libs/login.js"></script>
+  <script src="libs/crud.js"></script>
+</body>
+
 </html>
