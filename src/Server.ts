@@ -10,7 +10,7 @@ export class Server {
     // private routeMapping: Map<String, Function>;
 
     private headerText = {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json;charset=utf-8",
         "Access-Control-Allow-Origin": "*",
         "Access-Control-Allow-Headers": "*"
     };

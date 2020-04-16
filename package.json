@@ -12,6 +12,7 @@
     "@types/jsonwebtoken": "^8.3.9",
     "@types/node": "^13.11.1",
     "bootstrap": "^4.4.1",
+    "bootstrap-icons": "^1.0.0-alpha3",
     "jquery": "^3.5.0",
     "jsonwebtoken": "^8.5.1",
     "level": "^6.0.1",

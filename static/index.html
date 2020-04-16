@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>Hello, world!</title>
   </head>
@@ -72,125 +72,33 @@
         </form>
       </div>
 
-      <div class="data-grid data-grid-none" id="data-grid">
-        <table class="table">
+      <div class="data-grid-container data-grid-container-none" id="data-grid-container">
+        <button type="button" class="btn btn-primary btn-sm" id="addPetButton">+ add</button>
+        <table class="table" id="data-grid">
           <thead class="thead-dark">
             <tr>
               <th scope="col">#</th>
               <th scope="col">First</th>
               <th scope="col">Last</th>
               <th scope="col">Handle</th>
+              <th scope="col">Operation</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <table class="table">
-          <thead class="thead-light">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row" class="">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            
           </tbody>
         </table>
       </div>
       
     </div>
 
-    <footer>
-
-    </footer>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="libs/jquery.min.js"></script>
+    <script src="libs/popper.min.js"></script>
+    <script src="libs/bootstrap.min.js"></script>
     <script src="libs/global.js"></script>
     <script src="libs/login.js"></script>
     <script src="libs/crud.js"></script>
-    <!-- <script>
-
-      $(document).ready(function(){
-
-
-        
-        $("#loginButton").click(function(){
-          var username = $('#username').val();
-          var passwd = $('#passwd').val();
-          
-          $.get(`http://localhost:8080/login?name=${username}&password=${passwd}`, function(data,status){
-            console.log("Data: ", data , "\nStatus: " , status);
-            if (data.success) {
-              //
-              
-              window.localStorage.setItem('token', data.token)
-              //
-              $.ajax({
-                type: "GET",
-                headers:{"Authorization": data.token},
-                dataType: "application/json; charset=utf-8",
-                url: "http://localhost:8080/fetchAnimals",
-                success: function(data, status) {
-                  if (status === 'success') {
-                    
-                    console.log(data);
-                  }
-                }
-              });
-              
-            } else {
-              // $('.alert').show(true);
-              // console.log($('.alert'));
-              // $('.alert').text(data.result)
-              alert(data.result);
-            }
-          });
-        });
-
-      });
-
-    </script> -->
   </body>
 </html>

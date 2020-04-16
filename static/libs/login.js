@@ -12,11 +12,9 @@ $(document).ready(function(){
                 window.localStorage.setItem('token', data.token);
                 //
                 $('#login-container').addClass('login-container-none');
-                $('#data-grid').removeClass('data-grid-none');
-                // read data
-                $.get(`http://localhost:8080/fetchAnimals`, function(data, status) {
-                    console.log(">> fetch data: ", data);
-                })
+                // Dispatch the SIGN_IN_SUCCESS event to document.body.
+                $(document.body).trigger($.Event("SIGN_IN_SUCCESS"), data);
+                
             } else {
                 $('#login-alert').html(data.result);
                 $('#login-alert').removeClass('d-none');
@@ -34,12 +32,7 @@ $(document).ready(function(){
 
         if (isConfirm) {
             $.get(`http://localhost:8080/reg?name=${username}&password=${passwd}`, function(data, status){
-                if (data.success) {
-                    //
-                    $('#login-container').addClass('login-container-none');
-                    $('#data-grid').removeClass('data-grid-none');
-                    //
-                } else {
+                if (!data.success) {
                     $('#login-alert').html(data.result);
                     $('#login-alert').removeClass('d-none');
                 }
