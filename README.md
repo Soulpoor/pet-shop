@@ -31,3 +31,13 @@ serve -s static
 ```
 ssh-keygen -t rsa -f d:\secret.key  -C "admin@admin.com"
 ```
+
+# 接口测试地址
+```
+/reg?name=lucy&password=123
+/login?name=lucy&password=123
+/createAnimal?animalname=Superman&age=1&species=brid
+/updateAnimal?animalname=Superman&age=2
+/fetchAnimals
+/deleteAnimal?animalname=Superman
+```
